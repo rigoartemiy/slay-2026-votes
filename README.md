@@ -1,9 +1,24 @@
-# SLAY 2026 vote dashboard
+# Рейтинг голосований SLAY AWARDS 2026
 
-GitHub Pages dashboard for streamer votes. It refreshes `data.json` from the public Telegram channel `@slay_awards` every 15 minutes using GitHub Actions, then redeploys Pages. The page itself refreshes its data every five minutes.
+Сайт показывает общий зачёт стримеров и топы всех 16 номинаций. Переключай номинации кнопками сверху — длинную страницу листать не нужно.
 
-The overall leaderboard sums personal streamer nominations. Couple, project, event, and track choices remain independent options.
+**Сайт:** https://rigoartemiy.github.io/slay-2026-votes/
 
-## Publish
+## Возможности
 
-Enable GitHub Pages with **GitHub Actions** as the publishing source. The included workflow handles polling and deployment.
+- Общий зачёт суммирует голоса стримеров в персональных номинациях.
+- Каждая номинация открывается отдельной вкладкой.
+- У каждого кандидата есть раскрывающаяся кнопка «Кто голосовал». В списке отображаются авторы открытых бюллетеней и даты публикаций.
+- Ничьи занимают одно и то же место.
+- 5opka, XAH0B и Cacto0o выделены цветным градиентом. Трек «ТУСА МЕДУЗА» и пара «5opka & Sonasheka» отмечены отдельно.
+- Фон, цвета и оформление сделаны в палитре флага Кемеровской области.
+
+## Обновление данных
+
+GitHub Actions проверяет открытый канал Telegram [@slay_awards](https://t.me/s/slay_awards) каждые 15 минут, обновляет файл data.json и публикует сайт. Открытая страница запрашивает свежие данные каждые 5 минут.
+
+В раскрывающихся списках указаны авторы бюллетеней из публикаций канала. Сайт не собирает дополнительные сведения о голосовавших.
+
+## Публикация
+
+В настройках репозитория выбери **Settings → Pages → GitHub Actions** в качестве источника публикации. Файл .github/workflows/update-pages.yml запускает сбор данных и выкладку сайта.
