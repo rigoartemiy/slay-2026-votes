@@ -34,7 +34,36 @@ def author(text):
  m=re.search(r'([^\W_][\w.-]*)\s+'+triggers,text,re.I|re.UNICODE)
  return m.group(1) if m else 'Автор не указан'
 def main():
- d=json.loads(DATA.read_text(encoding='utf-8')); existing={str(x['id']):x for x in d.get('ballots',[])}; before=min([int(x['id']) for x in existing.values()] or [999999]); url=URL; seen=set(); newest=None
+ d=json.loads(DATA.read_text(encoding='utf-8'))
+ def keep_ballot(ballot):
+  date=str(ballot.get('date',''))
+  match=re.match(r'^(\d{2})\.(\d{2})\.(\d{4})
+ for _ in range(60):
+  resp=requests.get(url,timeout=30,headers={'User-Agent':'Mozilla/5.0'});resp.raise_for_status();soup=BeautifulSoup(resp.text,'html.parser');wraps=soup.select('.tgme_widget_message_wrap');ids=[];older=False
+  for w in wraps:
+   msg=w.select_one('.tgme_widget_message');body=w.select_one('.tgme_widget_message_text');tm=w.select_one('time[datetime]')
+   if not msg or not body:continue
+   post=msg.get('data-post','');mid=post.rsplit('/',1)[-1] if '/' in post else ''
+   if not mid.isdigit():continue
+   ids.append(int(mid));seen.add(mid);date=tm.get('datetime','') if tm else '';text=body.get_text(' ',strip=True);votes=extract(text)
+   if len(votes)>=8 and date[:10]>='2026-11-16':
+    existing[mid]={'id':mid,'author':'DmitryLixxx' if mid=='9474' else author(text),'date':date[:10],'publishedAt':date,'postUrl':f'https://t.me/slay_awards/{mid}','votes':votes}
+   if date and date[:10]<'2026-11-16':older=True
+  if older or not ids:break
+  nxt=min(ids)
+  if nxt<=before:break
+  url=f'{URL}?before={nxt}'
+ for ballot in existing.values():
+  mid=str(ballot.get('id',''))
+  if mid=='9474':ballot['author']='DmitryLixxx'
+  ballot.setdefault('postUrl',f'https://t.me/slay_awards/{mid}')
+  ballot['votes']={category:canon(category,value) for category,value in ballot.get('votes',{}).items()}
+ d['ballots']=sorted(existing.values(),key=lambda x:int(x['id']));d['updatedAt']=datetime.now(timezone.utc).isoformat(timespec='seconds');DATA.write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf-8');print(f"Saved {len(d['ballots'])} ballots; {len(seen)} Telegram posts checked")
+if __name__=='__main__':main()
+,date)
+  if match:date=f'{match.group(3)}-{match.group(2)}-{match.group(1)}'
+  return not date or date>='2026-11-16'
+ existing={str(x['id']):x for x in d.get('ballots',[]) if keep_ballot(x)}; before=min([int(x['id']) for x in existing.values()] or [999999]); url=URL; seen=set(); newest=None
  for _ in range(60):
   resp=requests.get(url,timeout=30,headers={'User-Agent':'Mozilla/5.0'});resp.raise_for_status();soup=BeautifulSoup(resp.text,'html.parser');wraps=soup.select('.tgme_widget_message_wrap');ids=[];older=False
   for w in wraps:
