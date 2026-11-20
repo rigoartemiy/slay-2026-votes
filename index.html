@@ -58,7 +58,7 @@
     .voter-list{margin:9px 0 3px;padding:10px 12px;border:1px solid rgba(255,121,0,.28);border-radius:11px;background:rgba(4,8,14,.5)}
     .voter-list ul{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
     .voter-list li{display:flex;align-items:center;gap:7px;padding:5px 8px;border:1px solid rgba(255,255,255,.075);border-radius:8px;color:#e3e8ef;background:rgba(255,255,255,.035);font-size:10px}
-    .voter-list time{color:var(--muted);font-size:9px;white-space:nowrap}
+    .voter-list a{color:#ffd2a6;text-decoration:none;font-weight:750}.voter-list a:hover{color:var(--orange-bright);text-decoration:underline}.voter-list time{color:var(--muted);font-size:9px;white-space:nowrap}
     .no-voters{margin:0;color:var(--muted);font-size:11px}
     .featured-row{background:linear-gradient(100deg,#d95700 0%,#ff7900 52%,#ffb14f 100%)!important;box-shadow:inset 3px 0 0 #ffe0bd,inset -1px 0 0 rgba(255,255,255,.28)}
     .featured-row td{background:transparent!important;color:#110b06!important;font-weight:900!important;border-bottom-color:rgba(0,0,0,.18)!important}
@@ -148,6 +148,20 @@
       if(/^\d{4}-\d{2}-\d{2}/.test(date)){const p=date.slice(0,10).split('-');return p[2]+'.'+p[1]+'.'+p[0];}
       return date;
     }
+    function canonicalCandidate(value){
+      return String(value||'').normalize('NFC').replace(/\s+/g,' ').trim();
+    }
+    function formatDateTime(publishedAt,fallback){
+      if(publishedAt){
+        const date=new Date(publishedAt);
+        if(!Number.isNaN(date.getTime())){
+          const parts=new Intl.DateTimeFormat('ru-RU',{timeZone:'Europe/Moscow',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(date);
+          const p={};parts.forEach(function(part){p[part.type]=part.value;});
+          return p.day+'.'+p.month+'.'+p.year+' '+p.hour+':'+p.minute;
+        }
+      }
+      return formatDate(fallback);
+    }
     function renderTabs(){
       let html='<button type="button" class="tab-button" id="tab-overall" role="tab" aria-selected="true" aria-controls="overall-panel" data-tab="overall">🏆 Общий зачёт</button>';
       html+='<button type="button" class="tab-button" id="tab-feed" role="tab" aria-selected="false" aria-controls="feed-panel" data-tab="feed">🗳️ Лента бюллетеней</button>';
@@ -156,7 +170,7 @@
     }
     function renderOverall(ballots){
       const totals={};
-      ballots.forEach(function(ballot){personal.forEach(function(category){const name=ballot.votes&&ballot.votes[category];if(name)totals[name]=(totals[name]||0)+1;});});
+      ballots.forEach(function(ballot){personal.forEach(function(category){const name=canonicalCandidate(ballot.votes&&ballot.votes[category]);if(name)totals[name]=(totals[name]||0)+1;});});
       const entries=Object.keys(totals).map(function(name){return {name:name,count:totals[name]};}).sort(function(a,b){return b.count-a.count||a.name.localeCompare(b.name,'ru');});
       ranked(entries);
       document.querySelector('#overallrows').innerHTML=entries.map(function(item,index){return '<tr class="'+rowClass(item.name)+'"><td class="place">'+rankLabel(entries,index,true)+'</td><td>'+esc(item.name)+'</td><td class="num">'+item.count+'</td></tr>';}).join('');
@@ -164,17 +178,17 @@
     function renderCategory(category,categoryIndex,ballots){
       const votes={};
       ballots.forEach(function(ballot){
-        const name=ballot.votes&&ballot.votes[category];
+        const name=canonicalCandidate(ballot.votes&&ballot.votes[category]);
         if(!name)return;
         if(!votes[name])votes[name]=[];
-        votes[name].push({author:ballot.author||'Автор не указан',date:ballot.date||''});
+        votes[name].push({author:ballot.author||'Автор не указан',date:ballot.date||'',publishedAt:ballot.publishedAt||'',postUrl:ballot.postUrl||('https://t.me/slay_awards/'+ballot.id)});
       });
       const entries=Object.keys(votes).map(function(name){return {name:name,count:votes[name].length,voters:votes[name]};}).sort(function(a,b){return b.count-a.count||a.name.localeCompare(b.name,'ru');});
       ranked(entries);
       const valid=entries.reduce(function(total,item){return total+item.count;},0);
       const rows=entries.map(function(item,index){
         const voterId='voters-'+categoryIndex+'-'+index;
-        const voterEntries=item.voters.map(function(voter){return '<li><span>'+esc(voter.author)+'</span>'+(voter.date?'<time>'+esc(voter.date)+'</time>':'')+'</li>';}).join('');
+        const voterEntries=item.voters.map(function(voter){const href=voter.postUrl||('https://t.me/slay_awards/'+voter.id);const dateText=formatDateTime(voter.publishedAt,voter.date);return '<li><a href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+esc(voter.author)+'</a>'+(dateText?'<time'+(voter.publishedAt?' datetime="'+esc(voter.publishedAt)+'"':'')+'>'+esc(dateText)+'</time>':'')+'</li>';}).join('');
         const badge=rowClass(item.name).indexOf('special-row')>=0?'<span class="special-badge">Выделенный вариант</span>':'';
         return '<tr class="'+rowClass(item.name)+'"><td class="place">'+rankLabel(entries,index,false)+'</td><td><div class="candidate-name">'+esc(item.name)+'</div><div class="candidate-tools">'+badge+'<button type="button" class="voter-toggle" aria-expanded="false" aria-controls="'+voterId+'" data-voter-toggle="'+voterId+'">Кто голосовал <span class="toggle-count">'+item.count+'</span></button></div><div class="voter-list" id="'+voterId+'" hidden><ul>'+voterEntries+'</ul></div></td><td class="num">'+item.count+'</td></tr>';
       }).join('');
@@ -185,10 +199,10 @@
       document.querySelector('#feedcount').textContent=newest.length+' бюллетеней';
       document.querySelector('#feed-list').innerHTML=newest.map(function(ballot,index){
         const votes=ballot.votes||{};
-        const choices=cats.filter(function(category){return votes[category];}).map(function(category){return '<div class="ballot-choice"><span class="choice-category">'+esc(category)+'</span><span class="choice-value">'+esc(votes[category])+'</span></div>';}).join('');
+        const choices=cats.filter(function(category){return votes[category];}).map(function(category){return '<div class="ballot-choice"><span class="choice-category">'+esc(category)+'</span><span class="choice-value">'+esc(canonicalCandidate(votes[category]))+'</span></div>';}).join('');
         const author=ballot.author||'Автор не указан';
         const count=Object.keys(votes).length;
-        return '<details class="feed-card"'+(index===0?' open':'')+'><summary><span class="feed-author">'+esc(author)+'</span><span class="feed-meta">'+esc(formatDate(ballot.date))+' · '+count+' из 16 номинаций</span></summary><div class="ballot-grid">'+choices+'</div></details>';
+        return '<details class="feed-card"'+(index===0?' open':'')+'><summary><span class="feed-author">'+esc(author)+'</span><span class="feed-meta">'+esc(formatDateTime(ballot.publishedAt,ballot.date))+' · '+count+' из 16 номинаций</span></summary><div class="ballot-grid">'+choices+'</div></details>';
       }).join('');
     }
     function selectTab(id){
