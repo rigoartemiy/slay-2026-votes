@@ -100,8 +100,8 @@
     .footer a{color:var(--orange-bright);text-decoration-color:rgba(255,121,0,.45);text-underline-offset:3px}
     .footer a:hover{color:#ffd2a6}
     .error{color:#ff9b8a}
-    @media(max-width:900px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scrollbar-color:rgba(255,121,0,.55) transparent}.tab-button{flex:0 0 auto}}
-    @media(max-width:700px){.carousel-stage{grid-template-columns:.7fr 1.2fr .7fr;min-height:210px}.carousel-art{width:clamp(104px,32vw,200px)}.carousel-item--side .carousel-art{transform:scale(.66)}.carousel-controls{gap:12px}.carousel-arrow{width:48px;height:34px}.carousel-index{font-size:17px}main{padding:26px 13px 42px}.sub{font-size:13px}.tabs{top:4px;margin:17px -13px 16px;padding:8px;border-radius:0;border-left:0;border-right:0}.tab-button{min-height:36px;padding:8px 10px;font-size:10px}.overall,.category-panel{padding:17px 12px 12px;border-radius:16px}.section-heading{align-items:flex-start}.section-heading h2{font-size:20px}.hint{max-width:140px;text-align:right}th{padding:9px 5px;font-size:9px}td{padding:9px 5px;font-size:12px}.place{width:38px}.voter-toggle{font-size:9px}.feed-card summary{align-items:flex-start;flex-wrap:wrap}.feed-meta{width:100%;padding-left:1px}.ballot-grid{grid-template-columns:1fr;padding:2px 12px 12px}.ballot-choice{grid-template-columns:minmax(105px,.75fr) minmax(0,1.25fr);gap:7px}.word-wall{opacity:.19}}
+    
+    @media(max-width:700px){.carousel-stage{grid-template-columns:.7fr 1.2fr .7fr;min-height:210px}.carousel-art{width:clamp(104px,32vw,200px)}.carousel-item--side .carousel-art{transform:scale(.66)}.carousel-controls{gap:12px}.carousel-arrow{width:48px;height:34px}.carousel-index{font-size:17px}main{padding:26px 13px 42px}.sub{font-size:13px}.overall,.category-panel{padding:17px 12px 12px;border-radius:16px}.section-heading{align-items:flex-start}.section-heading h2{font-size:20px}.hint{max-width:140px;text-align:right}th{padding:9px 5px;font-size:9px}td{padding:9px 5px;font-size:12px}.place{width:38px}.voter-toggle{font-size:9px}.feed-card summary{align-items:flex-start;flex-wrap:wrap}.feed-meta{width:100%;padding-left:1px}.ballot-grid{grid-template-columns:1fr;padding:2px 12px 12px}.ballot-choice{grid-template-columns:minmax(105px,.75fr) minmax(0,1.25fr);gap:7px}.word-wall{opacity:.19}}
     @media(max-width:700px){.feed-card summary{align-items:flex-start;flex-wrap:wrap}.feed-meta{width:100%;padding-left:1px}.ballot-grid{grid-template-columns:1fr;padding:2px 12px 12px}.ballot-choice{grid-template-columns:minmax(105px,.75fr) minmax(0,1.25fr);gap:7px}}
     @media print{body{background:#090909}.word-wall{opacity:.12}.nomination-carousel{break-inside:avoid}.category-panel,.overall,.feed-panel{box-shadow:none}}
   </style>
@@ -202,7 +202,7 @@
     let carouselIndex=0;
     let activeView='overall';
     function carouselArt(item){
-      if(!item.icon)return '<span class="carousel-utility-icon" aria-hidden="true">'+item.emoji+'</span>';
+      if(!item.icon)return '<span class="carousel-art"><span class="carousel-utility-icon" aria-hidden="true">'+item.emoji+'</span></span>';
       let html='<img class="carousel-icon" src="'+esc(item.icon)+'" alt="'+esc(item.label)+'" loading="lazy" decoding="async">';
       if(item.label==='NEXT GEN')html+='<span class="nextgey-cover" aria-label="Логотип NEXT GEY"><svg viewBox="0 0 260 150" role="img" aria-label="NEXT GEY"><defs><linearGradient id="nextgey-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb35f"/><stop offset=".42" stop-color="#ff611e"/><stop offset="1" stop-color="#9f1708"/></linearGradient></defs><text x="130" y="60" text-anchor="middle" font-size="58">NEXT</text><text x="130" y="132" text-anchor="middle" font-size="58">GEY</text></svg></span>';
       return '<span class="carousel-art">'+html+'</span>';
