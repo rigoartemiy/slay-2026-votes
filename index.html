@@ -3,87 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080a0f">
-  <meta name="description" content="Рейтинг голосований SLAY AWARDS 2026 по всем номинациям.">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Общий рейтинг, топы номинаций и лента бюллетеней SLAY AWARDS 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <title>SLAY 2026 — рейтинг голосований</title>
   <style>
-    :root{color-scheme:dark;--navy:#080a0f;--blue:#0876bd;--red:#e50916;--yellow:#ffd21b;--green:#009b4d;--panel:rgba(16,20,29,.92);--line:rgba(255,255,255,.1);--ink:#f5f6f8;--muted:#a3adbb;--shadow:0 22px 58px rgba(0,0,0,.28)}
+    :root{color-scheme:dark;--black:#090909;--orange:#ff7900;--orange-bright:#ff941f;--amber:#ffc078;--panel:rgba(19,18,17,.94);--line:rgba(255,255,255,.1);--ink:#f5f4f2;--muted:#a9a5a0;--shadow:0 22px 58px rgba(0,0,0,.42)}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{min-width:320px;min-height:100vh;margin:0;background:radial-gradient(ellipse at 5% 0%,rgba(8,118,189,.23),transparent 36rem),radial-gradient(ellipse at 100% 12%,rgba(229,9,22,.2),transparent 34rem),radial-gradient(ellipse at 50% 100%,rgba(0,155,77,.08),transparent 44rem),var(--navy);background-attachment:fixed;font:15px/1.5 Montserrat,Inter,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+    body{min-width:320px;min-height:100vh;margin:0;background:radial-gradient(ellipse at 8% 0%,rgba(255,121,0,.15),transparent 37rem),radial-gradient(ellipse at 100% 16%,rgba(255,121,0,.09),transparent 34rem),var(--black);background-attachment:fixed;font:15px/1.5 Montserrat,Inter,"Segoe UI",Arial,sans-serif;color:var(--ink)}
     [hidden]{display:none!important}
-    .number-wall{position:fixed;z-index:0;inset:0;width:100%;height:100%;opacity:.33;pointer-events:none}
+    .word-wall{position:fixed;z-index:0;inset:0;width:100%;height:100%;opacity:.33;pointer-events:none}
     main{position:relative;z-index:1;width:min(1380px,100%);margin:auto;padding:38px 28px 64px}
     .hero{margin-bottom:20px}
-    .tag{display:inline-flex;align-items:center;gap:9px;padding:7px 11px;border:1px solid rgba(255,210,27,.22);border-radius:999px;color:var(--yellow);background:rgba(255,210,27,.075);font-size:11px;font-weight:850;letter-spacing:.16em}
-    .tag:before{width:8px;height:8px;border-radius:50%;content:"";background:linear-gradient(135deg,var(--blue) 0 33%,var(--red) 33% 66%,var(--yellow) 66%);box-shadow:0 0 14px rgba(255,210,27,.45)}
+    .tag{display:inline-flex;align-items:center;gap:9px;padding:7px 11px;border:1px solid rgba(255,121,0,.22);border-radius:999px;color:var(--orange-bright);background:rgba(255,121,0,.075);font-size:11px;font-weight:850;letter-spacing:.16em}
+    .tag:before{width:8px;height:8px;border-radius:50%;content:"";background:linear-gradient(135deg,var(--orange) 0 33%,var(--orange) 33% 66%,var(--orange-bright) 66%);box-shadow:0 0 14px rgba(255,121,0,.45)}
     h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.045em;line-height:1.02;margin:15px 0 9px}
-    .sub{max-width:760px;margin:0;color:#c0c6d0;font-size:15px}
+    .sub{max-width:760px;margin:0;color:#c3bfba;font-size:15px}
     .status{display:inline-flex;align-items:center;gap:9px;margin-top:15px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(13,17,25,.78);font-size:11px}
-    .dot{width:8px;height:8px;border-radius:50%;background:#37d67a;box-shadow:0 0 12px rgba(55,214,122,.7);display:inline-block}
+    .dot{width:8px;height:8px;border-radius:50%;background:#ff9b3d;box-shadow:0 0 12px rgba(55,214,122,.7);display:inline-block}
     .tabs{position:sticky;top:8px;z-index:5;display:flex;flex-wrap:wrap;gap:7px;margin:22px 0;padding:10px;border:1px solid rgba(255,255,255,.13);border-radius:17px;background:rgba(9,12,18,.93);box-shadow:0 10px 32px rgba(0,0,0,.3);backdrop-filter:blur(18px)}
     .tab-button{min-height:38px;padding:8px 12px;border:1px solid rgba(255,255,255,.1);border-radius:11px;color:#c9d0da;background:rgba(255,255,255,.035);font:700 11px/1.2 Montserrat,Inter,"Segoe UI",Arial,sans-serif;cursor:pointer;transition:transform .16s ease,border-color .16s ease,background .16s ease,color .16s ease}
-    .tab-button:hover{transform:translateY(-1px);border-color:rgba(255,210,27,.45);color:#fff}
-    .tab-button[aria-selected="true"]{border-color:rgba(255,210,27,.7);color:#fff;background:linear-gradient(105deg,rgba(8,118,189,.7),rgba(229,9,22,.62) 57%,rgba(255,210,27,.32));box-shadow:0 4px 18px rgba(229,9,22,.13)}
+    .tab-button:hover{transform:translateY(-1px);border-color:rgba(255,121,0,.45);color:#fff}
+    .tab-button[aria-selected="true"]{border-color:rgba(255,121,0,.7);color:#fff;background:linear-gradient(105deg,rgba(255,121,0,.7),rgba(255,121,0,.62) 57%,rgba(255,121,0,.32));box-shadow:0 4px 18px rgba(255,121,0,.13)}
     .section-heading{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:0 0 14px}
     .section-heading h2{margin:0;font-size:clamp(21px,2.5vw,27px);letter-spacing:-.025em}
-    .eyebrow{margin:0 0 4px;color:var(--yellow);font-size:10px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow{margin:0 0 4px;color:var(--orange-bright);font-size:10px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
     .hint{color:var(--muted);font-size:11px}
-    .ballot-counter{flex:0 0 auto;padding:7px 11px;border:1px solid rgba(8,118,189,.38);border-radius:999px;color:#b7dfff;background:rgba(8,118,189,.13);font-size:11px;font-weight:750;white-space:nowrap}
-    .overall,.category-panel{position:relative;overflow:hidden;padding:22px 25px 17px;border:1px solid rgba(255,255,255,.12);border-radius:21px;background:linear-gradient(112deg,rgba(8,118,189,.17),transparent 48%),linear-gradient(290deg,rgba(229,9,22,.12),transparent 42%),var(--panel);box-shadow:var(--shadow);backdrop-filter:blur(16px)}
-    .overall:before,.category-panel:before{position:absolute;inset:0 0 auto;height:3px;content:"";background:linear-gradient(90deg,var(--blue),var(--red) 53%,var(--yellow))}
+    .ballot-counter{flex:0 0 auto;padding:7px 11px;border:1px solid rgba(255,121,0,.38);border-radius:999px;color:#ffd2a6;background:rgba(255,121,0,.13);font-size:11px;font-weight:750;white-space:nowrap}
+    .overall,.category-panel{position:relative;overflow:hidden;padding:22px 25px 17px;border:1px solid rgba(255,255,255,.12);border-radius:21px;background:linear-gradient(112deg,rgba(255,121,0,.17),transparent 48%),linear-gradient(290deg,rgba(255,121,0,.12),transparent 42%),var(--panel);box-shadow:var(--shadow);backdrop-filter:blur(16px)}
+    .overall:before,.category-panel:before{position:absolute;inset:0 0 auto;height:3px;content:"";background:linear-gradient(90deg,var(--orange),var(--orange) 53%,var(--orange-bright))}
     .overall{margin-bottom:18px}
     table{width:100%;border-collapse:collapse}
-    th{padding:11px 9px;border-bottom:1px solid rgba(255,255,255,.13);color:#9ea8b7;font-size:10px;font-weight:800;letter-spacing:.1em;text-align:left;text-transform:uppercase}
-    td{padding:10px 9px;border-bottom:1px solid rgba(255,255,255,.055);color:#e6e9ee;vertical-align:top}
+    th{padding:11px 9px;border-bottom:1px solid rgba(255,255,255,.13);color:#a9a39c;font-size:10px;font-weight:800;letter-spacing:.1em;text-align:left;text-transform:uppercase}
+    td{padding:10px 9px;border-bottom:1px solid rgba(255,255,255,.055);color:#e8e5e1;vertical-align:top}
     tbody tr:last-child td{border-bottom:0}
     tbody tr{transition:background .16s ease}
     tbody tr:hover{background:rgba(255,255,255,.035)}
     .num{text-align:right;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
     .place{width:58px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
-    .overall tbody tr:first-child{background:linear-gradient(90deg,rgba(255,210,27,.12),transparent 78%)}
-    .overall tbody tr:first-child td{color:var(--yellow);font-weight:850}
+    .overall tbody tr:first-child{background:linear-gradient(90deg,rgba(255,121,0,.12),transparent 78%)}
+    .overall tbody tr:first-child td{color:var(--orange-bright);font-weight:850}
     .category-panel{animation:appear .2s ease}
     @keyframes appear{from{opacity:.72;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
     .category-panel .section-heading{margin-bottom:16px}
     .candidate-name{font-weight:700;overflow-wrap:anywhere}
     .candidate-tools{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:7px}
-    .voter-toggle{display:inline-flex;align-items:center;gap:7px;padding:5px 8px;border:1px solid rgba(8,118,189,.36);border-radius:9px;color:#c7e6ff;background:rgba(8,118,189,.11);font:700 10px/1.2 Montserrat,Inter,"Segoe UI",Arial,sans-serif;cursor:pointer;transition:background .15s ease,border-color .15s ease}
-    .voter-toggle:hover,.voter-toggle[aria-expanded="true"]{border-color:rgba(255,210,27,.55);color:#fff2b0;background:rgba(255,210,27,.12)}
-    .voter-toggle .toggle-count{color:var(--yellow);font-variant-numeric:tabular-nums}
-    .special-badge{display:inline-flex;align-items:center;padding:4px 7px;border:1px solid rgba(255,210,27,.4);border-radius:999px;color:#ffe995;background:rgba(255,210,27,.1);font-size:9px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
-    .voter-list{margin:9px 0 3px;padding:10px 12px;border:1px solid rgba(8,118,189,.28);border-radius:11px;background:rgba(4,8,14,.5)}
+    .voter-toggle{display:inline-flex;align-items:center;gap:7px;padding:5px 8px;border:1px solid rgba(255,121,0,.36);border-radius:9px;color:#ffd2a6;background:rgba(255,121,0,.11);font:700 10px/1.2 Montserrat,Inter,"Segoe UI",Arial,sans-serif;cursor:pointer;transition:background .15s ease,border-color .15s ease}
+    .voter-toggle:hover,.voter-toggle[aria-expanded="true"]{border-color:rgba(255,121,0,.55);color:#fff2b0;background:rgba(255,121,0,.12)}
+    .voter-toggle .toggle-count{color:var(--orange-bright);font-variant-numeric:tabular-nums}
+    .special-badge{display:inline-flex;align-items:center;padding:4px 7px;border:1px solid rgba(255,121,0,.4);border-radius:999px;color:#ffe995;background:rgba(255,121,0,.1);font-size:9px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
+    .voter-list{margin:9px 0 3px;padding:10px 12px;border:1px solid rgba(255,121,0,.28);border-radius:11px;background:rgba(4,8,14,.5)}
     .voter-list ul{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
     .voter-list li{display:flex;align-items:center;gap:7px;padding:5px 8px;border:1px solid rgba(255,255,255,.075);border-radius:8px;color:#e3e8ef;background:rgba(255,255,255,.035);font-size:10px}
     .voter-list time{color:var(--muted);font-size:9px;white-space:nowrap}
     .no-voters{margin:0;color:var(--muted);font-size:11px}
-    .featured-row{background:linear-gradient(100deg,rgba(8,118,189,.92) 0%,rgba(229,9,22,.86) 38%,rgba(255,210,27,.95) 73%,rgba(0,155,77,.85) 100%)!important;box-shadow:inset 3px 0 0 #fff6c4,inset -1px 0 0 rgba(255,255,255,.3)}
-    .featured-row td{background:transparent!important;color:#090b10!important;font-weight:900!important;border-bottom-color:rgba(0,0,0,.18)!important}
-    .special-row{background:linear-gradient(95deg,rgba(255,210,27,.16),rgba(229,9,22,.08) 54%,rgba(8,118,189,.12))!important;box-shadow:inset 3px 0 0 var(--yellow),inset 0 0 0 1px rgba(255,210,27,.18)}
+    .featured-row{background:linear-gradient(100deg,#d95700 0%,#ff7900 52%,#ffb14f 100%)!important;box-shadow:inset 3px 0 0 #ffe0bd,inset -1px 0 0 rgba(255,255,255,.28)}
+    .featured-row td{background:transparent!important;color:#110b06!important;font-weight:900!important;border-bottom-color:rgba(0,0,0,.18)!important}
+    .special-row{background:linear-gradient(95deg,rgba(255,121,0,.16),rgba(255,121,0,.08) 54%,rgba(255,121,0,.12))!important;box-shadow:inset 3px 0 0 var(--orange-bright),inset 0 0 0 1px rgba(255,121,0,.18)}
     .special-row td{font-weight:800}
     .special-row .candidate-name{color:#ffe995}
+    .feed-panel{min-height:240px}
+    .feed-intro{margin:0 0 16px;color:var(--muted);font-size:12px}
+    .feed-list{display:grid;gap:10px}
+    .feed-card{border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(8,8,8,.46);overflow:hidden}
+    .feed-card[open]{border-color:rgba(255,121,0,.36);background:rgba(12,10,8,.72)}
+    .feed-card summary{display:flex;align-items:center;gap:12px;list-style:none;padding:14px 16px;cursor:pointer}
+    .feed-card summary::-webkit-details-marker{display:none}
+    .feed-card summary:after{content:"+";margin-left:auto;color:var(--orange-bright);font-size:20px;font-weight:600;line-height:1}
+    .feed-card[open] summary:after{content:"−"}
+    .feed-author{font-size:14px;font-weight:850}
+    .feed-meta{color:var(--muted);font-size:11px}
+    .ballot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;padding:2px 16px 14px}
+    .ballot-choice{display:grid;grid-template-columns:minmax(130px,.8fr) minmax(0,1.2fr);gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.07)}
+    .choice-category{color:#a9a39c;font-size:10px}
+    .choice-value{color:#f0ece7;font-size:11px;font-weight:650;overflow-wrap:anywhere}
     .footer{margin:24px 2px 0;color:var(--muted);font-size:11px}
-    .footer a{color:var(--yellow);text-decoration-color:rgba(255,210,27,.45);text-underline-offset:3px}
-    .footer a:hover{color:#fff0a1}
-    .error{color:#ff8288}
-    @media(max-width:900px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scrollbar-color:rgba(255,210,27,.55) transparent}.tab-button{flex:0 0 auto}}
-    @media(max-width:700px){main{padding:26px 13px 42px}.sub{font-size:13px}.tabs{top:4px;margin:17px -13px 16px;padding:8px;border-radius:0;border-left:0;border-right:0}.tab-button{min-height:36px;padding:8px 10px;font-size:10px}.overall,.category-panel{padding:17px 12px 12px;border-radius:16px}.section-heading{align-items:flex-start}.section-heading h2{font-size:20px}.hint{max-width:140px;text-align:right}th{padding:9px 5px;font-size:9px}td{padding:9px 5px;font-size:12px}.place{width:38px}.voter-toggle{font-size:9px}.number-wall{opacity:.23}}
-    @media print{body{background:#080a0f}.number-wall{opacity:.12}.tabs{position:static}.category-panel,.overall{box-shadow:none}}
+    .footer a{color:var(--orange-bright);text-decoration-color:rgba(255,121,0,.45);text-underline-offset:3px}
+    .footer a:hover{color:#ffd2a6}
+    .error{color:#ff9b8a}
+    @media(max-width:900px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scrollbar-color:rgba(255,121,0,.55) transparent}.tab-button{flex:0 0 auto}}
+    @media(max-width:700px){main{padding:26px 13px 42px}.sub{font-size:13px}.tabs{top:4px;margin:17px -13px 16px;padding:8px;border-radius:0;border-left:0;border-right:0}.tab-button{min-height:36px;padding:8px 10px;font-size:10px}.overall,.category-panel{padding:17px 12px 12px;border-radius:16px}.section-heading{align-items:flex-start}.section-heading h2{font-size:20px}.hint{max-width:140px;text-align:right}th{padding:9px 5px;font-size:9px}td{padding:9px 5px;font-size:12px}.place{width:38px}.voter-toggle{font-size:9px}.feed-card summary{align-items:flex-start;flex-wrap:wrap}.feed-meta{width:100%;padding-left:1px}.ballot-grid{grid-template-columns:1fr;padding:2px 12px 12px}.ballot-choice{grid-template-columns:minmax(105px,.75fr) minmax(0,1.25fr);gap:7px}.word-wall{opacity:.19}}
+    @media(max-width:700px){.feed-card summary{align-items:flex-start;flex-wrap:wrap}.feed-meta{width:100%;padding-left:1px}.ballot-grid{grid-template-columns:1fr;padding:2px 12px 12px}.ballot-choice{grid-template-columns:minmax(105px,.75fr) minmax(0,1.25fr);gap:7px}}
+    @media print{body{background:#090909}.word-wall{opacity:.12}.tabs{position:static}.category-panel,.overall,.feed-panel{box-shadow:none}}
   </style>
 </head>
 <body>
-  <svg class="number-wall" aria-hidden="true" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
-    <defs><linearGradient id="flag-outline" x1="0" y1="0" x2="1600" y2="850" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0876bd"/><stop offset=".34" stop-color="#e50916"/><stop offset=".67" stop-color="#ffd21b"/><stop offset=".86" stop-color="#009b4d"/><stop offset="1" stop-color="#0876bd"/></linearGradient></defs>
-    <g fill="#030407" stroke="url(#flag-outline)" stroke-width="5" paint-order="stroke fill" font-family="Arial,sans-serif" font-weight="900" text-anchor="middle">
-      <text x="145" y="270" font-size="310">42</text><text x="645" y="235" font-size="235">42</text><text x="1295" y="290" font-size="320">42</text><text x="345" y="680" font-size="260">42</text><text x="935" y="680" font-size="315">42</text><text x="1510" y="795" font-size="245">42</text>
+  <svg class="word-wall" aria-hidden="true" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+    <defs><linearGradient id="orange-outline" x1="0" y1="0" x2="1600" y2="850" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8a3100"/><stop offset=".48" stop-color="#ff7900"/><stop offset="1" stop-color="#ffc078"/></linearGradient></defs>
+    <g fill="#030303" stroke="url(#orange-outline)" stroke-width="4" paint-order="stroke fill" font-family="Montserrat,Arial,sans-serif" font-weight="900" text-anchor="middle">
+      <text x="260" y="210" font-size="118">SWINLINE</text><text x="820" y="155" font-size="92">SWINLINE</text><text x="1330" y="300" font-size="125">SWINLINE</text><text x="330" y="560" font-size="105">SWINLINE</text><text x="1000" y="690" font-size="128">SWINLINE</text><text x="1450" y="900" font-size="94">SWINLINE</text>
     </g>
   </svg>
   <main>
     <header class="hero">
-      <div class="tag">SLAY AWARDS · 2026</div>
+      <div class="tag">SLAY AWARDS · SWINLINE</div>
       <h1>Голоса стримеров</h1>
       <p class="sub">Общий зачёт и отдельные топы всех 16 номинаций — переключай их кнопками, не листая страницу.</p>
       <div class="status"><i class="dot"></i><span id="status">Загружаю данные…</span></div>
@@ -93,8 +109,13 @@
       <div class="section-heading"><div><p class="eyebrow">Сводная таблица</p><h2>🏆 Общий зачёт</h2></div><span class="ballot-counter" id="ballotcount"></span></div>
       <table><thead><tr><th>Место</th><th>Стример</th><th class="num">Голоса</th></tr></thead><tbody id="overallrows"></tbody></table>
     </section>
+    <section id="feed-panel" class="overall feed-panel" role="tabpanel" aria-labelledby="tab-feed" hidden>
+      <div class="section-heading"><div><p class="eyebrow">Новые сверху</p><h2>Лента бюллетеней</h2></div><span class="ballot-counter" id="feedcount"></span></div>
+      <p class="feed-intro">Нажми на карточку, чтобы посмотреть выборы стримера по всем номинациям.</p>
+      <div id="feed-list" class="feed-list"></div>
+    </section>
     <section id="category-panels" aria-live="polite"></section>
-    <p class="footer">Имена в раскрывающихся списках — авторы открытых бюллетеней в Telegram. Пары, проекты, события и треки учитываются как отдельные варианты. Источник: <a href="https://t.me/s/slay_awards">Telegram @slay_awards</a>.</p>
+    <p class="footer">В ленте показаны авторы и открытые бюллетени из публикаций Telegram, от новых к старым. Пары, проекты, события и треки учитываются как отдельные варианты. Источник: <a href="https://t.me/s/slay_awards">Telegram @slay_awards</a>.</p>
   </main>
   <script>
     const cats=['SLAY King','SLAY Queen','Лучший CS-стример','Лучший Dota-стример','Лучший multigaming-стример','NEXT GEN','Лучший IRL-стример','Проект года на Twitch','Аудитория года','Пара года','Завоз года','Трек года','Косплеер года','Ютубер года','Лучший Minecraft-стример','Человек-мем года'];
@@ -116,8 +137,20 @@
       items.forEach(function(item,index){if(index===0||item.count!==items[index-1].count)place=index+1;item.place=place;});
       return items;
     }
+    function rankLabel(items,index,medalFirst){
+      const item=items[index];
+      const tied=(index>0&&items[index-1].count===item.count)||(index+1<items.length&&items[index+1].count===item.count);
+      let label=medalFirst&&index===0&&item.place===1?'🥇':String(item.place);
+      return label+(tied?'=':'');
+    }
+    function formatDate(value){
+      const date=String(value||'');
+      if(/^\d{4}-\d{2}-\d{2}/.test(date)){const p=date.slice(0,10).split('-');return p[2]+'.'+p[1]+'.'+p[0];}
+      return date;
+    }
     function renderTabs(){
       let html='<button type="button" class="tab-button" id="tab-overall" role="tab" aria-selected="true" aria-controls="overall-panel" data-tab="overall">🏆 Общий зачёт</button>';
+      html+='<button type="button" class="tab-button" id="tab-feed" role="tab" aria-selected="false" aria-controls="feed-panel" data-tab="feed">🗳️ Лента бюллетеней</button>';
       cats.forEach(function(category,index){html+='<button type="button" class="tab-button" id="tab-category-'+index+'" role="tab" aria-selected="false" aria-controls="category-'+index+'" data-tab="category-'+index+'">'+esc(category)+'</button>';});
       document.querySelector('#tabs').innerHTML=html;
     }
@@ -126,7 +159,7 @@
       ballots.forEach(function(ballot){personal.forEach(function(category){const name=ballot.votes&&ballot.votes[category];if(name)totals[name]=(totals[name]||0)+1;});});
       const entries=Object.keys(totals).map(function(name){return {name:name,count:totals[name]};}).sort(function(a,b){return b.count-a.count||a.name.localeCompare(b.name,'ru');});
       ranked(entries);
-      document.querySelector('#overallrows').innerHTML=entries.map(function(item,index){return '<tr class="'+rowClass(item.name)+'"><td class="place">'+(index===0?'🥇':item.place)+'</td><td>'+esc(item.name)+'</td><td class="num">'+item.count+'</td></tr>';}).join('');
+      document.querySelector('#overallrows').innerHTML=entries.map(function(item,index){return '<tr class="'+rowClass(item.name)+'"><td class="place">'+rankLabel(entries,index,true)+'</td><td>'+esc(item.name)+'</td><td class="num">'+item.count+'</td></tr>';}).join('');
     }
     function renderCategory(category,categoryIndex,ballots){
       const votes={};
@@ -142,16 +175,26 @@
       const rows=entries.map(function(item,index){
         const voterId='voters-'+categoryIndex+'-'+index;
         const voterEntries=item.voters.map(function(voter){return '<li><span>'+esc(voter.author)+'</span>'+(voter.date?'<time>'+esc(voter.date)+'</time>':'')+'</li>';}).join('');
-        const next=entries[index+1];
-        const placeLabel=item.place+(next&&next.place===item.place?'=':'');
         const badge=rowClass(item.name).indexOf('special-row')>=0?'<span class="special-badge">Выделенный вариант</span>':'';
-        return '<tr class="'+rowClass(item.name)+'"><td class="place">'+placeLabel+'</td><td><div class="candidate-name">'+esc(item.name)+'</div><div class="candidate-tools">'+badge+'<button type="button" class="voter-toggle" aria-expanded="false" aria-controls="'+voterId+'" data-voter-toggle="'+voterId+'">Кто голосовал <span class="toggle-count">'+item.count+'</span></button></div><div class="voter-list" id="'+voterId+'" hidden><ul>'+voterEntries+'</ul></div></td><td class="num">'+item.count+'</td></tr>';
+        return '<tr class="'+rowClass(item.name)+'"><td class="place">'+rankLabel(entries,index,false)+'</td><td><div class="candidate-name">'+esc(item.name)+'</div><div class="candidate-tools">'+badge+'<button type="button" class="voter-toggle" aria-expanded="false" aria-controls="'+voterId+'" data-voter-toggle="'+voterId+'">Кто голосовал <span class="toggle-count">'+item.count+'</span></button></div><div class="voter-list" id="'+voterId+'" hidden><ul>'+voterEntries+'</ul></div></td><td class="num">'+item.count+'</td></tr>';
       }).join('');
       return '<section class="category-panel" id="category-'+categoryIndex+'" role="tabpanel" aria-labelledby="tab-category-'+categoryIndex+'" hidden><div class="section-heading"><div><p class="eyebrow">Номинация</p><h2>'+esc(category)+'</h2></div><span class="ballot-counter">'+valid+' голосов</span></div><table><thead><tr><th>Место</th><th>Кандидат / вариант</th><th class="num">Голоса</th></tr></thead><tbody>'+rows+'</tbody></table></section>';
+    }
+    function renderFeed(ballots){
+      const newest=ballots.slice().sort(function(a,b){return Number(b.id)-Number(a.id);});
+      document.querySelector('#feedcount').textContent=newest.length+' бюллетеней';
+      document.querySelector('#feed-list').innerHTML=newest.map(function(ballot,index){
+        const votes=ballot.votes||{};
+        const choices=cats.filter(function(category){return votes[category];}).map(function(category){return '<div class="ballot-choice"><span class="choice-category">'+esc(category)+'</span><span class="choice-value">'+esc(votes[category])+'</span></div>';}).join('');
+        const author=ballot.author||'Автор не указан';
+        const count=Object.keys(votes).length;
+        return '<details class="feed-card"'+(index===0?' open':'')+'><summary><span class="feed-author">'+esc(author)+'</span><span class="feed-meta">'+esc(formatDate(ballot.date))+' · '+count+' из 16 номинаций</span></summary><div class="ballot-grid">'+choices+'</div></details>';
+      }).join('');
     }
     function selectTab(id){
       document.querySelectorAll('.tab-button').forEach(function(button){const active=button.dataset.tab===id;button.setAttribute('aria-selected',active?'true':'false');});
       document.querySelector('#overall-panel').hidden=id!=='overall';
+      document.querySelector('#feed-panel').hidden=id!=='feed';
       document.querySelectorAll('.category-panel').forEach(function(panel){panel.hidden=panel.id!==id;});
     }
     document.querySelector('#tabs').addEventListener('click',function(event){const button=event.target.closest('[data-tab]');if(button)selectTab(button.dataset.tab);});
@@ -176,6 +219,7 @@
         renderTabs();
         renderOverall(data.ballots||[]);
         document.querySelector('#ballotcount').textContent=(data.ballots||[]).length+' бюллетеней';
+        renderFeed(data.ballots||[]);
         document.querySelector('#category-panels').innerHTML=cats.map(function(category,index){return renderCategory(category,index,data.ballots||[]);}).join('');
         selectTab(activeId);
         const updated=new Date(data.updatedAt);
