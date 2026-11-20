@@ -149,15 +149,15 @@
     const personal=cats.filter(function(x){return !['Проект года на Twitch','Пара года','Завоз года','Трек года'].includes(x);});
     const specialTrack='туса медуза';
     const specialPair='5opka & Sonasheka';
+    const specialZavoz='5opka и мозгоеб';
     let last='';
     function esc(x){return String(x).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
     function rowClass(name){
-      const value=String(name).trim();
-      const low=value.toLowerCase();
-      const classes=[];
-      if(low==='5opka'||low==='xah0b'||low.indexOf('cacto0')===0)classes.push('featured-row');
-      if(low.indexOf(specialTrack)!==-1||low.replace(/\s+/g,'')===specialPair.toLowerCase().replace(/\s+/g,''))classes.push('special-row');
-      return classes.join(' ');
+      const low=String(name).trim().toLowerCase();
+      const normalized=low.replace(/\s+/g,'');
+      const pair=String(specialPair).toLowerCase().replace(/\s+/g,'');
+      if(low==='5opka'||low==='xah0b'||low.indexOf('cacto0')===0||low===specialZavoz||low.indexOf(specialTrack)!==-1||normalized===pair)return 'featured-row';
+      return '';
     }
     function ranked(items){
       let place=0;
@@ -209,7 +209,7 @@
       'Лучший Minecraft-стример':'https://media.slay-award.ru/pcik_392_ad8c16a8e0.png',
       'Человек-мем года':'assets/icons/meme-of-year.png'
     };
-    const views=[{id:'overall',label:'Общий зачёт',icon:'assets/icons/overall.png'},{id:'feed',label:'Лента бюллетеней',emoji:'🗳️'}].concat(cats.map(function(category,index){return {id:'category-'+index,label:category,icon:nominationIcons[category]};}));
+    const views=[{id:'overall',label:'Общий зачёт',icon:'assets/icons/overall.png'},{id:'feed',label:'Лента бюллетеней',icon:'assets/icons/vote-feed.png'}].concat(cats.map(function(category,index){return {id:'category-'+index,label:category,icon:nominationIcons[category]};}));
     let carouselIndex=0;
     let activeView='overall';
     function carouselArt(item){
@@ -276,8 +276,7 @@
       const rows=entries.map(function(item,index){
         const voterId='voters-'+categoryIndex+'-'+index;
         const voterEntries=item.voters.map(function(voter){const href=voter.postUrl||('https://t.me/slay_awards/'+voter.id);const dateText=formatDateTime(voter.publishedAt,voter.date);return '<li><a href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+esc(voter.author)+'</a>'+(dateText?'<time'+(voter.publishedAt?' datetime="'+esc(voter.publishedAt)+'"':'')+'>'+esc(dateText)+'</time>':'')+'</li>';}).join('');
-        const badge=rowClass(item.name).indexOf('special-row')>=0?'<span class="special-badge">Выделенный вариант</span>':'';
-        return '<tr class="'+rowClass(item.name)+'"><td class="place">'+rankLabel(entries,index,false)+'</td><td><div class="candidate-name">'+esc(item.name)+'</div><div class="candidate-tools">'+badge+'<button type="button" class="voter-toggle" aria-expanded="false" aria-controls="'+voterId+'" data-voter-toggle="'+voterId+'">Кто голосовал <span class="toggle-count">'+item.count+'</span></button></div><div class="voter-list" id="'+voterId+'" hidden><ul>'+voterEntries+'</ul></div></td><td class="num">'+item.count+'</td></tr>';
+        return '<tr class="'+rowClass(item.name)+'"><td class="place">'+rankLabel(entries,index,false)+'</td><td><div class="candidate-name">'+esc(item.name)+'</div><div class="candidate-tools"><button type="button" class="voter-toggle" aria-expanded="false" aria-controls="'+voterId+'" data-voter-toggle="'+voterId+'">Кто голосовал <span class="toggle-count">'+item.count+'</span></button></div><div class="voter-list" id="'+voterId+'" hidden><ul>'+voterEntries+'</ul></div></td><td class="num">'+item.count+'</td></tr>';
       }).join('');
       return '<section class="category-panel" id="category-'+categoryIndex+'" role="tabpanel" aria-labelledby="carousel-current-label" hidden><div class="section-heading"><div><p class="eyebrow">Номинация</p><h2>'+esc(category)+'</h2></div><span class="ballot-counter">'+valid+' голосов</span></div><table><thead><tr><th>Место</th><th>Кандидат / вариант</th><th class="num">Голоса</th></tr></thead><tbody>'+rows+'</tbody></table></section>';
     }
