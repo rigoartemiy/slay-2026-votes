@@ -44,11 +44,16 @@ def main():
    if not mid.isdigit():continue
    ids.append(int(mid));seen.add(mid);date=tm.get('datetime','') if tm else '';text=body.get_text(' ',strip=True);votes=extract(text)
    if len(votes)>=8:
-    existing[mid]={'id':mid,'author':author(text),'date':date[:10],'votes':votes}
+    existing[mid]={'id':mid,'author':'DmitryLixxx' if mid=='9474' else author(text),'date':date[:10],'publishedAt':date,'postUrl':f'https://t.me/slay_awards/{mid}','votes':votes}
    if date and date[:10]<'2026-11-16':older=True
   if older or not ids:break
   nxt=min(ids)
   if nxt>=before:break
   url=f'{URL}?before={nxt}'
+ for ballot in existing.values():
+  mid=str(ballot.get('id',''))
+  if mid=='9474':ballot['author']='DmitryLixxx'
+  ballot.setdefault('postUrl',f'https://t.me/slay_awards/{mid}')
+  ballot['votes']={category:canon(category,value) for category,value in ballot.get('votes',{}).items()}
  d['ballots']=sorted(existing.values(),key=lambda x:int(x['id']));d['updatedAt']=datetime.now(timezone.utc).isoformat(timespec='seconds');DATA.write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf-8');print(f"Saved {len(d['ballots'])} ballots; {len(seen)} Telegram posts checked")
 if __name__=='__main__':main()
