@@ -40,6 +40,7 @@ def main():
   if len(date)==10 and date[2]=='.' and date[5]=='.':
    date=date[6:10]+'-'+date[3:5]+'-'+date[:2]
   return date>='2026-11-15'
+ known_authors={'9443':'DanilaGorilla','9448':'Exile','9474':'DmitryLixxx'}
  existing={str(x['id']):x for x in d.get('ballots',[]) if in_scope(x)}
  before=min([int(x['id']) for x in existing.values()] or [999999])
  url=URL
@@ -67,7 +68,7 @@ def main():
    text=body.get_text(' ',strip=True)
    votes=extract(text)
    if len(votes)>=8 and date and date[:10]>='2026-11-15':
-    voter='DanilaGorilla' if mid=='9443' else ('DmitryLixxx' if mid=='9474' else author(text))
+    voter=known_authors.get(mid) or author(text)
     existing[mid]={'id':mid,'author':voter,'date':date[:10],'publishedAt':date,'postUrl':'https://t.me/slay_awards/'+mid,'votes':votes}
    if date and date[:10]<'2026-11-15':
     older=True
@@ -79,10 +80,8 @@ def main():
   url=URL+'?before='+str(nxt)
  for ballot in existing.values():
   mid=str(ballot.get('id',''))
-  if mid=='9443':
-   ballot['author']='DanilaGorilla'
-  if mid=='9474':
-   ballot['author']='DmitryLixxx'
+  if mid in known_authors:
+   ballot['author']=known_authors[mid]
   ballot['postUrl']='https://t.me/slay_awards/'+mid
   ballot['votes']={category:canon(category,value) for category,value in ballot.get('votes',{}).items()}
  d['ballots']=sorted(existing.values(),key=lambda x:int(x['id']))
