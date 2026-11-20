@@ -35,9 +35,11 @@ def author(text):
  return m.group(1) if m else 'Автор не указан'
 def main():
  d=json.loads(DATA.read_text(encoding='utf-8'))
- def keep_ballot(ballot):
+ def in_scope(ballot):
   date=str(ballot.get('date',''))
-  match=re.match(r'^(\d{2})\.(\d{2})\.(\d{4})
+  if len(date)==10 and date[2]=='.' and date[5]=='.':date=date[6:10]+'-'+date[3:5]+'-'+date[:2]
+  return date>='2026-11-16'
+ existing={str(x['id']):x for x in d.get('ballots',[]) if in_scope(x)}; before=min([int(x['id']) for x in existing.values()] or [999999]); url=URL; seen=set(); newest=None
  for _ in range(60):
   resp=requests.get(url,timeout=30,headers={'User-Agent':'Mozilla/5.0'});resp.raise_for_status();soup=BeautifulSoup(resp.text,'html.parser');wraps=soup.select('.tgme_widget_message_wrap');ids=[];older=False
   for w in wraps:
