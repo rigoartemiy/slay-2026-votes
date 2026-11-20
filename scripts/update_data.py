@@ -48,7 +48,7 @@ def main():
    if date and date[:10]<'2026-11-16':older=True
   if older or not ids:break
   nxt=min(ids)
-  if nxt>=before:break
+  if nxt<=before:break
   url=f'{URL}?before={nxt}'
  for ballot in existing.values():
   mid=str(ballot.get('id',''))
