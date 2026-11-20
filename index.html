@@ -106,6 +106,7 @@
     .ballot-choice{display:grid;grid-template-columns:minmax(130px,.8fr) minmax(0,1.2fr);gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.07)}
     .choice-category{color:#a9a39c;font-size:10px}
     .choice-value{color:#f0ece7;font-size:11px;font-weight:650;overflow-wrap:anywhere}
+    .ballot-choice--missing{opacity:.7}.ballot-choice--missing .choice-category{color:#827a72}.choice-value--missing{color:#b2aaa1;font-style:italic;font-weight:600}
     .footer{margin:24px 2px 0;color:var(--muted);font-size:11px}
     .footer a{color:var(--orange-bright);text-decoration-color:rgba(255,121,0,.45);text-underline-offset:3px}
     .footer a:hover{color:#ffd2a6}
@@ -193,8 +194,8 @@
     const nominationIcons={
       'SLAY King':'https://media.slay-award.ru/king_392_875b627497.png',
       'SLAY Queen':'https://media.slay-award.ru/queen_392_05cfbe48e5.png',
-      'Лучший CS-стример':'https://media.slay-award.ru/cs_392_2a5edadb2b.png',
-      'Лучший Dota-стример':'https://media.slay-award.ru/dota_392_f1ad7d87d0.png',
+      'Лучший CS-стример':'assets/icons/best-cs-streamer.png',
+      'Лучший Dota-стример':'assets/icons/best-dota-streamer.png',
       'Лучший multigaming-стример':'https://media.slay-award.ru/game_392_907efa6437.png',
       'NEXT GEN':'assets/icons/next-gen.png',
       'Лучший IRL-стример':'https://media.slay-award.ru/irl_392_a096c20ff1.png',
@@ -246,7 +247,7 @@
     function setActiveView(idOrIndex){
       const index=typeof idOrIndex==='number'?idOrIndex:views.findIndex(function(view){return view.id===idOrIndex;});
       if(index<0)return;
-      const next=(index+views.length)%views.length;
+      const next=((index%views.length)+views.length)%views.length;
       const delta=next-carouselIndex;
       let direction=0;
       if(delta!==0)direction=Math.abs(delta)>views.length/2?(delta>0?-1:1):(delta>0?1:-1);
@@ -285,18 +286,22 @@
       document.querySelector('#feedcount').textContent=newest.length+' бюллетеней';
       document.querySelector('#feed-list').innerHTML=newest.map(function(ballot,index){
         const votes=ballot.votes||{};
-        const choices=cats.filter(function(category){return votes[category];}).map(function(category){return '<div class="ballot-choice"><span class="choice-category">'+esc(category)+'</span><span class="choice-value">'+esc(canonicalCandidate(votes[category],category))+'</span></div>';}).join('');
+        const choices=cats.map(function(category){
+          const value=canonicalCandidate(votes[category],category);
+          const missing=!value;
+          return '<div class="ballot-choice'+(missing?' ballot-choice--missing':'')+'"><span class="choice-category">'+esc(category)+'</span><span class="choice-value'+(missing?' choice-value--missing':'')+'">'+esc(missing?'Не голосовал':value)+'</span></div>';
+        }).join('');
         const author=ballot.author||'Автор не указан';
-        const count=Object.keys(votes).length;
-        return '<details class="feed-card"'+(index===0?' open':'')+'><summary><span class="feed-author">'+esc(author)+'</span><span class="feed-meta">'+esc(formatDateTime(ballot.publishedAt,ballot.date))+' · '+count+' из 16 номинаций</span></summary><div class="ballot-grid">'+choices+'</div></details>';
+        const count=cats.filter(function(category){return Boolean(canonicalCandidate(votes[category],category));}).length;
+        return '<details class="feed-card"'+(index===0?' open':'')+'><summary><span class="feed-author">'+esc(author)+'</span><span class="feed-meta">'+esc(formatDateTime(ballot.publishedAt,ballot.date))+' · '+count+' из '+cats.length+' номинаций</span></summary><div class="ballot-grid">'+choices+'</div></details>';
       }).join('');
     }
     document.querySelector('#carousel-stage').addEventListener('click',function(event){
       const button=event.target.closest('[data-carousel-index]');
       if(button)setActiveView(Number(button.dataset.carouselIndex));
     });
-    document.querySelector('#carousel-prev').addEventListener('click',function(){setActiveView(carouselIndex-1);});
-    document.querySelector('#carousel-next').addEventListener('click',function(){setActiveView(carouselIndex+1);});
+    document.querySelector('#carousel-prev').addEventListener('click',function(){setActiveView(carouselIndex===0?views.length-1:carouselIndex-1);});
+    document.querySelector('#carousel-next').addEventListener('click',function(){setActiveView(carouselIndex===views.length-1?0:carouselIndex+1);});
     document.querySelector('#carousel').addEventListener('keydown',function(event){
       if(event.key==='ArrowLeft'){event.preventDefault();setActiveView(carouselIndex-1);}
       if(event.key==='ArrowRight'){event.preventDefault();setActiveView(carouselIndex+1);}
