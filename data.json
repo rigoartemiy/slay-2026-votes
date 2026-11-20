@@ -1,11 +1,34 @@
 {
   "source": "https://t.me/s/slay_awards",
-  "updatedAt": "2026-11-20T22:52:36+00:00",
+  "updatedAt": "2026-11-20T22:53:46+00:00",
   "ballots": [
+    {
+      "id": "9443",
+      "author": "номинантов",
+      "date": "2026-11-15",
+      "publishedAt": "2026-11-15T20:34:58+00:00",
+      "postUrl": "https://t.me/slay_awards/9443",
+      "votes": {
+        "SLAY King": "RavshanN",
+        "SLAY Queen": "Gensyxa",
+        "Лучший CS-стример": "Strogo",
+        "Лучший multigaming-стример": "DmitryLixxx",
+        "Лучший IRL-стример": "Leva2k",
+        "Проект года на Twitch": "Медиа Класико",
+        "Аудитория года": "5opka",
+        "Пара года": "Enzzai & Whylollycry",
+        "Завоз года": "Егорик",
+        "Трек года": "Кондиции — VladRagovsky",
+        "Косплеер года": "Gaechka или ByOwl",
+        "Ютубер года": "Paradeev1ch"
+      }
+    },
     {
       "id": "9445",
       "author": "Markl1nck",
-      "date": "16.11.2026",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-16T11:56:40+00:00",
+      "postUrl": "https://t.me/slay_awards/9445",
       "votes": {
         "SLAY King": "Leva2k",
         "SLAY Queen": "ByOwl",
@@ -23,13 +46,14 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Zloy"
-      },
-      "postUrl": "https://t.me/slay_awards/9445"
+      }
     },
     {
       "id": "9446",
       "author": "Poisonika",
-      "date": "16.11.2026",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-16T12:48:02+00:00",
+      "postUrl": "https://t.me/slay_awards/9446",
       "votes": {
         "SLAY King": "DangerLyoha",
         "SLAY Queen": "ByOwl",
@@ -47,13 +71,14 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Stray"
-      },
-      "postUrl": "https://t.me/slay_awards/9446"
+      }
     },
     {
       "id": "9447",
       "author": "VladRagovsky",
-      "date": "16.11.2026",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-16T13:23:54+00:00",
+      "postUrl": "https://t.me/slay_awards/9447",
       "votes": {
         "SLAY King": "Deepins",
         "SLAY Queen": "ByOwl",
@@ -71,13 +96,14 @@
         "Ютубер года": "Paradeev1ch",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Koreshzy"
-      },
-      "postUrl": "https://t.me/slay_awards/9447"
+      }
     },
     {
       "id": "9448",
-      "author": "Exile",
-      "date": "16.11.2026",
+      "author": "также",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-16T14:01:11+00:00",
+      "postUrl": "https://t.me/slay_awards/9448",
       "votes": {
         "SLAY King": "Deepins",
         "SLAY Queen": "Gensyxa",
@@ -95,13 +121,14 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Zloy"
-      },
-      "postUrl": "https://t.me/slay_awards/9448"
+      }
     },
     {
       "id": "9449",
       "author": "Skillz0r",
-      "date": "16.11.2026",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-16T15:00:03+00:00",
+      "postUrl": "https://t.me/slay_awards/9449",
       "votes": {
         "SLAY King": "DangerLyoha",
         "SLAY Queen": "ByOwl",
@@ -119,13 +146,14 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Zloy"
-      },
-      "postUrl": "https://t.me/slay_awards/9449"
+      }
     },
     {
       "id": "9451",
       "author": "Drake",
-      "date": "16.11.2026",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-16T16:11:05+00:00",
+      "postUrl": "https://t.me/slay_awards/9451",
       "votes": {
         "SLAY Queen": "ByOwl",
         "Лучший CS-стример": "Strogo",
@@ -142,13 +170,14 @@
         "Ютубер года": "Nowkie",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Zloy"
-      },
-      "postUrl": "https://t.me/slay_awards/9451"
+      }
     },
     {
       "id": "9452",
       "author": "Iceicell",
-      "date": "16.11.2026",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-16T17:09:58+00:00",
+      "postUrl": "https://t.me/slay_awards/9452",
       "votes": {
         "SLAY King": "Leva2k",
         "SLAY Queen": "MorpheYa",
@@ -166,13 +195,14 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Leva2k"
-      },
-      "postUrl": "https://t.me/slay_awards/9452"
+      }
     },
     {
       "id": "9453",
       "author": "5opka",
-      "date": "16.11.2026",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-16T18:00:08+00:00",
+      "postUrl": "https://t.me/slay_awards/9453",
       "votes": {
         "SLAY King": "5opka",
         "SLAY Queen": "Korya",
@@ -190,13 +220,14 @@
         "Ютубер года": "Nowkie",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Mafanya"
-      },
-      "postUrl": "https://t.me/slay_awards/9453"
+      }
     },
     {
       "id": "9455",
       "author": "Gaechka",
-      "date": "17.11.2026",
+      "date": "2026-11-17",
+      "publishedAt": "2026-11-17T09:00:14+00:00",
+      "postUrl": "https://t.me/slay_awards/9455",
       "votes": {
         "SLAY King": "Strogo",
         "SLAY Queen": "Gaechka",
@@ -214,13 +245,14 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Gaechka"
-      },
-      "postUrl": "https://t.me/slay_awards/9455"
+      }
     },
     {
       "id": "9456",
       "author": "Deepins",
-      "date": "17.11.2026",
+      "date": "2026-11-17",
+      "publishedAt": "2026-11-17T10:10:25+00:00",
+      "postUrl": "https://t.me/slay_awards/9456",
       "votes": {
         "SLAY Queen": "MorpheYa",
         "Лучший CS-стример": "Strogo",
@@ -237,13 +269,14 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Edison",
         "Человек-мем года": "Anek"
-      },
-      "postUrl": "https://t.me/slay_awards/9456"
+      }
     },
     {
       "id": "9459",
       "author": "Sasavot",
-      "date": "17.11.2026",
+      "date": "2026-11-17",
+      "publishedAt": "2026-11-17T12:50:50+00:00",
+      "postUrl": "https://t.me/slay_awards/9459",
       "votes": {
         "SLAY King": "DangerLyoha",
         "SLAY Queen": "ByOwl",
@@ -260,13 +293,14 @@
         "Ютубер года": "Helin",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Rostikfacekid"
-      },
-      "postUrl": "https://t.me/slay_awards/9459"
+      }
     },
     {
       "id": "9461",
       "author": "Stintik",
-      "date": "17.11.2026",
+      "date": "2026-11-17",
+      "publishedAt": "2026-11-17T16:20:20+00:00",
+      "postUrl": "https://t.me/slay_awards/9461",
       "votes": {
         "SLAY King": "5opka",
         "SLAY Queen": "MorpheYa",
@@ -284,13 +318,14 @@
         "Ютубер года": "DeadP47",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Mafanya"
-      },
-      "postUrl": "https://t.me/slay_awards/9461"
+      }
     },
     {
       "id": "9465",
       "author": "Fruktozka",
-      "date": "17.11.2026",
+      "date": "2026-11-17",
+      "publishedAt": "2026-11-17T19:00:07+00:00",
+      "postUrl": "https://t.me/slay_awards/9465",
       "votes": {
         "SLAY King": "DangerLyoha",
         "SLAY Queen": "ByOwl",
@@ -308,13 +343,14 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Zloy"
-      },
-      "postUrl": "https://t.me/slay_awards/9465"
+      }
     },
     {
       "id": "9466",
       "author": "Buster",
-      "date": "17.11.2026",
+      "date": "2026-11-17",
+      "publishedAt": "2026-11-17T20:46:17+00:00",
+      "postUrl": "https://t.me/slay_awards/9466",
       "votes": {
         "SLAY King": "RavshanN",
         "SLAY Queen": "MorpheYa",
@@ -332,8 +368,7 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Edison",
         "Человек-мем года": "RavshanN"
-      },
-      "postUrl": "https://t.me/slay_awards/9466"
+      }
     },
     {
       "id": "9467",
