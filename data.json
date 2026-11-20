@@ -1,6 +1,6 @@
 {
   "source": "https://t.me/s/slay_awards",
-  "updatedAt": "2026-11-20T22:46:30+00:00",
+  "updatedAt": "2026-11-20T22:52:10+00:00",
   "ballots": [
     {
       "id": "9445",
@@ -23,7 +23,8 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Zloy"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9445"
     },
     {
       "id": "9446",
@@ -46,7 +47,8 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Stray"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9446"
     },
     {
       "id": "9447",
@@ -69,7 +71,8 @@
         "Ютубер года": "Paradeev1ch",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Koreshzy"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9447"
     },
     {
       "id": "9448",
@@ -92,7 +95,8 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Zloy"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9448"
     },
     {
       "id": "9449",
@@ -115,7 +119,8 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Zloy"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9449"
     },
     {
       "id": "9451",
@@ -137,7 +142,8 @@
         "Ютубер года": "Nowkie",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Zloy"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9451"
     },
     {
       "id": "9452",
@@ -160,7 +166,8 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Leva2k"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9452"
     },
     {
       "id": "9453",
@@ -183,7 +190,8 @@
         "Ютубер года": "Nowkie",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Mafanya"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9453"
     },
     {
       "id": "9455",
@@ -206,7 +214,8 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Gaechka"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9455"
     },
     {
       "id": "9456",
@@ -228,7 +237,8 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Edison",
         "Человек-мем года": "Anek"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9456"
     },
     {
       "id": "9459",
@@ -250,7 +260,8 @@
         "Ютубер года": "Helin",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Rostikfacekid"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9459"
     },
     {
       "id": "9461",
@@ -273,7 +284,8 @@
         "Ютубер года": "DeadP47",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Mafanya"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9461"
     },
     {
       "id": "9465",
@@ -296,7 +308,8 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Mokrivskyi",
         "Человек-мем года": "Zloy"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9465"
     },
     {
       "id": "9466",
@@ -319,12 +332,15 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "Edison",
         "Человек-мем года": "RavshanN"
-      }
+      },
+      "postUrl": "https://t.me/slay_awards/9466"
     },
     {
       "id": "9467",
       "author": "Lagoda",
       "date": "2026-11-18",
+      "publishedAt": "2026-11-18T08:45:01+00:00",
+      "postUrl": "https://t.me/slay_awards/9467",
       "votes": {
         "SLAY King": "Leva2k",
         "SLAY Queen": "MorpheYa",
@@ -333,10 +349,10 @@
         "Лучший multigaming-стример": "Bratishkin",
         "NEXT GEN": "Leva2k",
         "Лучший IRL-стример": "Leva2k",
-        "Проект года на Twitch": " Восхождение на пик Ленина",
+        "Проект года на Twitch": "Восхождение на пик Ленина",
         "Аудитория года": "5opka",
         "Пара года": "NelyaRay & Stintik",
-        "Завоз года": " Егорик разрушает комнаты стримеров",
+        "Завоз года": "Егорик разрушает комнаты стримеров",
         "Трек года": "Выходные — Stintik",
         "Косплеер года": "AlinaRinRin",
         "Ютубер года": "Sweetie Fox",
@@ -348,6 +364,8 @@
       "id": "9473",
       "author": "LeronBaron",
       "date": "2026-11-18",
+      "publishedAt": "2026-11-18T15:44:58+00:00",
+      "postUrl": "https://t.me/slay_awards/9473",
       "votes": {
         "SLAY King": "RavshanN",
         "SLAY Queen": "ByOwl",
@@ -369,8 +387,10 @@
     },
     {
       "id": "9474",
-      "author": "Автор не указан",
+      "author": "DmitryLixxx",
       "date": "2026-11-18",
+      "publishedAt": "2026-11-18T17:01:05+00:00",
+      "postUrl": "https://t.me/slay_awards/9474",
       "votes": {
         "SLAY King": "Leva2k",
         "SLAY Queen": "ByOwl",
@@ -394,6 +414,8 @@
       "id": "9476",
       "author": "Evelone",
       "date": "2026-11-18",
+      "publishedAt": "2026-11-18T19:08:48+00:00",
+      "postUrl": "https://t.me/slay_awards/9476",
       "votes": {
         "SLAY King": "DangerLyoha",
         "SLAY Queen": "ByOwl",
@@ -417,6 +439,8 @@
       "id": "9478",
       "author": "Yuuechka",
       "date": "2026-11-19",
+      "publishedAt": "2026-11-19T09:00:58+00:00",
+      "postUrl": "https://t.me/slay_awards/9478",
       "votes": {
         "SLAY King": "RavshanN",
         "SLAY Queen": "ByOwl",
@@ -440,6 +464,8 @@
       "id": "9479",
       "author": "Korya",
       "date": "2026-11-19",
+      "publishedAt": "2026-11-19T10:54:58+00:00",
+      "postUrl": "https://t.me/slay_awards/9479",
       "votes": {
         "SLAY King": "5opka",
         "SLAY Queen": "ByOwl",
@@ -463,6 +489,8 @@
       "id": "9482",
       "author": "Gensyxa",
       "date": "2026-11-19",
+      "publishedAt": "2026-11-19T15:14:24+00:00",
+      "postUrl": "https://t.me/slay_awards/9482",
       "votes": {
         "SLAY King": "AnarAbdullaev",
         "SLAY Queen": "Gensyxa",
@@ -486,6 +514,8 @@
       "id": "9484",
       "author": "IvanZolo",
       "date": "2026-11-19",
+      "publishedAt": "2026-11-19T20:09:58+00:00",
+      "postUrl": "https://t.me/slay_awards/9484",
       "votes": {
         "SLAY King": "Leva2k",
         "SLAY Queen": "Yuuechka",
@@ -494,7 +524,7 @@
         "Лучший multigaming-стример": "DangerLyoha",
         "NEXT GEN": "AslanShukasha",
         "Лучший IRL-стример": "Leva2k",
-        "Проект года на Twitch": " Восхождение на пик Ленина",
+        "Проект года на Twitch": "Восхождение на пик Ленина",
         "Аудитория года": "5opka",
         "Пара года": "Gaechka & Strogo",
         "Завоз года": "Егорик разрушает комнаты стримеров",
@@ -509,6 +539,8 @@
       "id": "9485",
       "author": "Zloy",
       "date": "2026-11-20",
+      "publishedAt": "2026-11-20T10:00:17+00:00",
+      "postUrl": "https://t.me/slay_awards/9485",
       "votes": {
         "SLAY King": "DangerLyoha",
         "SLAY Queen": "MorpheYa",
@@ -532,6 +564,8 @@
       "id": "9487",
       "author": "Shadowkek",
       "date": "2026-11-20",
+      "publishedAt": "2026-11-20T13:21:06+00:00",
+      "postUrl": "https://t.me/slay_awards/9487",
       "votes": {
         "SLAY King": "Leva2k",
         "SLAY Queen": "ByOwl",
@@ -555,6 +589,8 @@
       "id": "9489",
       "author": "Quickhuntik",
       "date": "2026-11-20",
+      "publishedAt": "2026-11-20T19:06:06+00:00",
+      "postUrl": "https://t.me/slay_awards/9489",
       "votes": {
         "SLAY King": "DangerLyoha",
         "SLAY Queen": "ByOwl",
