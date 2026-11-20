@@ -233,7 +233,7 @@
     }
     function renderOverall(ballots){
       const totals={};
-      ballots.forEach(function(ballot){personal.forEach(function(category){const name=canonicalCandidate(ballot.votes&&ballot.votes[category],category);if(name)totals[name]=(totals[name]||0)+1;});});
+      ballots.forEach(function(ballot){personal.forEach(function(category){const name=canonicalCandidate(ballot.votes&&ballot.votes[category],category);if(name&&name.toLocaleLowerCase('ru-RU')!=='шорты хантика')totals[name]=(totals[name]||0)+1;});});
       const entries=Object.keys(totals).map(function(name){return {name:name,count:totals[name]};}).sort(function(a,b){return b.count-a.count||a.name.localeCompare(b.name,'ru');});
       ranked(entries);
       document.querySelector('#overallrows').innerHTML=entries.map(function(item,index){return '<tr class="'+rowClass(item.name)+'"><td class="place">'+rankLabel(entries,index,true)+'</td><td>'+esc(item.name)+'</td><td class="num">'+item.count+'</td></tr>';}).join('');
