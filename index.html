@@ -164,8 +164,10 @@
       if(/^\d{4}-\d{2}-\d{2}/.test(date)){const p=date.slice(0,10).split('-');return p[2]+'.'+p[1]+'.'+p[0];}
       return date;
     }
-    function canonicalCandidate(value){
-      return String(value||'').normalize('NFC').replace(/\s+/g,' ').trim();
+    function canonicalCandidate(value,category){
+      const clean=String(value||'').normalize('NFC').replace(/\s+/g,' ').trim();
+      if(category==='Проект года на Twitch'&&/^(?:betboom\s+)?медиа класико$/i.test(clean))return 'BetBoom Медиа Класико';
+      return clean;
     }
     function formatDateTime(publishedAt,fallback){
       if(publishedAt){
@@ -239,7 +241,7 @@
     function renderCategory(category,categoryIndex,ballots){
       const votes={};
       ballots.forEach(function(ballot){
-        const name=canonicalCandidate(ballot.votes&&ballot.votes[category]);
+        const name=canonicalCandidate(ballot.votes&&ballot.votes[category],category);
         if(!name)return;
         if(!votes[name])votes[name]=[];
         votes[name].push({author:ballot.author||'Автор не указан',date:ballot.date||'',publishedAt:ballot.publishedAt||'',postUrl:ballot.postUrl||('https://t.me/slay_awards/'+ballot.id)});
