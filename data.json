@@ -1,6 +1,6 @@
 {
   "source": "https://t.me/s/slay_awards",
-  "updatedAt": "2026-11-21T09:30:06+00:00",
+  "updatedAt": "2026-11-21T10:21:51+00:00",
   "ballots": [
     {
       "id": "9443",
@@ -643,6 +643,31 @@
         "Ютубер года": "Шорты Хантика",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Misolo"
+      }
+    },
+    {
+      "id": "9490",
+      "author": "Автор не указан",
+      "date": "2026-11-21",
+      "publishedAt": "2026-11-21T10:01:01+00:00",
+      "postUrl": "https://t.me/slay_awards/9490",
+      "votes": {
+        "SLAY King": "AnarAbdullaev",
+        "SLAY Queen": "Whylollycry",
+        "Лучший CS-стример": "Strogo",
+        "Лучший Dota-стример": "Rostislav999",
+        "Лучший multigaming-стример": "DangerLyoha",
+        "NEXT GEN": "Misolo",
+        "Лучший IRL-стример": "Leva2k",
+        "Проект года на Twitch": "Выживание в Aфрике",
+        "Аудитория года": "5opka",
+        "Пара года": "Enzzai & Whylollycry",
+        "Завоз года": "Егорик разрушает комнаты стримеров",
+        "Трек года": "Кондиции — VladRagovsky",
+        "Косплеер года": "Gaechka",
+        "Ютубер года": "Exile",
+        "Лучший Minecraft-стример": "5opka",
+        "Человек-мем года": "Syslov171"
       }
     }
   ]
