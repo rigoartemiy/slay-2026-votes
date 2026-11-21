@@ -1,6 +1,6 @@
 {
   "source": "https://t.me/s/slay_awards",
-  "updatedAt": "2026-11-21T16:13:58+00:00",
+  "updatedAt": "2026-11-21T16:58:57+00:00",
   "ballots": [
     {
       "id": "9443",
@@ -668,6 +668,31 @@
         "Ютубер года": "Exile",
         "Лучший Minecraft-стример": "5opka",
         "Человек-мем года": "Syslov171"
+      }
+    },
+    {
+      "id": "9491",
+      "author": "Автор не указан",
+      "date": "2026-11-21",
+      "publishedAt": "2026-11-21T16:45:25+00:00",
+      "postUrl": "https://t.me/slay_awards/9491",
+      "votes": {
+        "SLAY King": "DangerLyoha",
+        "SLAY Queen": "MorpheYa",
+        "Лучший CS-стример": "Chopper",
+        "Лучший Dota-стример": "LenaGol0vach",
+        "Лучший multigaming-стример": "DangerLyoha",
+        "NEXT GEN": "CleanKil",
+        "Лучший IRL-стример": "Leva2k",
+        "Проект года на Twitch": "Восхождение на пик Ленина",
+        "Аудитория года": "5opka",
+        "Пара года": "NelyaRay & Stintik",
+        "Завоз года": "Alex_Grizlee упал в бассейн на забеге",
+        "Трек года": "Прости я не знаю — SeregaPirat",
+        "Косплеер года": "DangerLyoha",
+        "Ютубер года": "Nowkie",
+        "Лучший Minecraft-стример": "5opka",
+        "Человек-мем года": "Zloy"
       }
     }
   ]
